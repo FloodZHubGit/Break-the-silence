@@ -2,63 +2,41 @@ import { useState } from "react";
 import "../../index.css";
 import store from "../../stores/store";
 
-export default function ConversationEmma2() {
-  const emmaText2Showing = store((state) => state.emmaText2Showing);
-  const emmaQuest2Active = store((state) => state.emmaQuest2Active);
-  const emmaQuest2Done = store((state) => state.emmaQuest2Done);
-
+export default function ConversationZoe() {
+  const zoeTextShowing = store((state) => state.zoeTextShowing);
   const [step, setStep] = useState(0);
 
   const steps = [
     {
       speaker: "Moi",
-      message: "Voici ton téléphone Emma. Je l'ai trouvé à l'accueil.",
+      message: "Bonjour, Zoé c’est bien ça ?",
     },
     {
-      speaker: "Emma",
+      speaker: "Zoé",
+      message: "Oui c’est moi.",
+    },
+    {
+      speaker: "Moi",
       message:
-        "Super tu as retrouvé mon téléphone merci beaucoup. Mais je ne sais pas à qui parler de ces messages.",
-      options: [
-        {
-          text: "Tu devrais en parler à la police ou la gendarmerie.",
-          correct: false,
-        },
-        {
-          text: "Tu devrais les signaler à un supérieur hiérarchique ou à ton employeur.",
-          correct: true,
-        },
-        {
-          text: "Tu devrais en parler à Sylvie, ta copine de bureau.",
-          correct: false,
-        },
-      ],
+        "Comment se passe ta vie au travail, tes collègues sont respectueux ? ",
     },
     {
-      speaker: "Emma",
+      speaker: "Zoé",
       message:
-        "Tu as raison, je vais en parler à mon supérieur hiérarchique. Mais à quelle loi du code pénal je dois me référer si je veux lui en parler ?",
-      options: [
-        {
-          text: "Article 222-23.",
-          correct: false,
-        },
-        {
-          text: "Article 222-32.",
-          correct: false,
-        },
-        {
-          text: "Article 222-33.",
-          correct: true,
-        },
-        {
-          text: "Article 222-22.",
-          correct: false,
-        },
-      ],
+        "Ça se passe bien. Mais Nathan a laissé un post-it sur mon bureau, m’invitant à aller boire un verre après le travail. Cela me met mal à l’aise.",
     },
     {
-      speaker: "Emma",
-      message: " Merci beaucoup pour ton aide !",
+      speaker: "Moi",
+      message: "Tu as gardé ce post-it ?",
+    },
+    {
+      speaker: "Zoé",
+      message:
+        " Oui il est sur mon bureau, peux-tu aller le chercher s’il te plait ?",
+    },
+    {
+      speaker: "Moi",
+      message: "Oui bien sûr, je vais le chercher.",
     },
   ];
 
@@ -67,8 +45,8 @@ export default function ConversationEmma2() {
   };
 
   const getImage = (speaker) => {
-    if (speaker === "Emma") {
-      return "emma.png";
+    if (speaker === "Zoé") {
+      return "zoe.png";
     } else {
       return "moi.png";
     }
@@ -88,17 +66,16 @@ export default function ConversationEmma2() {
   };
 
   const closeConversation = () => {
-    store.setState({ currentQuest: "Parler à Laura" });
-    store.setState({ personHelped: 1 });
-    store.setState({ emmaText2Showing: false });
-    store.setState({ emmaQuest2Active: false });
-    store.setState({ emmaQuest2Done: true });
-    store.setState({ lauraQuestActive: true });
+    store.setState({ currentQuest: "Retrouver le post-it" });
+    store.setState({ zoeTextShowing: false });
+    store.setState({ zoeQuestActive: false });
+    store.setState({ zoeQuestDone: true });
+    store.setState({ postItQuestActive: true });
   };
 
   return (
     <>
-      {emmaText2Showing && (
+      {zoeTextShowing && (
         <div className="conversation">
           <img
             src={getImage(steps[step].speaker)}

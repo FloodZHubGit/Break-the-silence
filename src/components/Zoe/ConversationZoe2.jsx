@@ -2,63 +2,67 @@ import { useState } from "react";
 import "../../index.css";
 import store from "../../stores/store";
 
-export default function ConversationEmma2() {
-  const emmaText2Showing = store((state) => state.emmaText2Showing);
-  const emmaQuest2Active = store((state) => state.emmaQuest2Active);
-  const emmaQuest2Done = store((state) => state.emmaQuest2Done);
-
+export default function ConversationZoe2() {
+  const zoeText2Showing = store((state) => state.zoeText2Showing);
   const [step, setStep] = useState(0);
 
   const steps = [
     {
-      speaker: "Moi",
-      message: "Voici ton téléphone Emma. Je l'ai trouvé à l'accueil.",
-    },
-    {
-      speaker: "Emma",
+      speaker: "Zoé",
       message:
-        "Super tu as retrouvé mon téléphone merci beaucoup. Mais je ne sais pas à qui parler de ces messages.",
+        "Super tu l’as trouvé ! Le message qu’il m'a laissé me rend vraiment mal à l’aise.",
       options: [
         {
-          text: "Tu devrais en parler à la police ou la gendarmerie.",
+          text: "Tu devrais en parler à ton supérieur !",
           correct: false,
         },
         {
-          text: "Tu devrais les signaler à un supérieur hiérarchique ou à ton employeur.",
+          text: "Et c’est la première fois qu’il te laisse ce genre de message sur ton bureau ?",
           correct: true,
         },
         {
-          text: "Tu devrais en parler à Sylvie, ta copine de bureau.",
+          text: "Ne répond pas et ignore le.",
           correct: false,
         },
       ],
     },
     {
-      speaker: "Emma",
+      speaker: "Zoé",
       message:
-        "Tu as raison, je vais en parler à mon supérieur hiérarchique. Mais à quelle loi du code pénal je dois me référer si je veux lui en parler ?",
+        "Oui c’est la première fois qu’il me laisse un message sur mon bureau, même à la pause il ne m’a jamais adressé la parole.",
       options: [
         {
-          text: "Article 222-23.",
+          text: "Tu devrais en parler immédiatement à la police ou à la gendarmerie !",
           correct: false,
         },
         {
-          text: "Article 222-32.",
-          correct: false,
-        },
-        {
-          text: "Article 222-33.",
+          text: "Je pense qu’il essaye de te draguer, il doit être timide pour ne jamais t’avoir adressé la parole. Tu as essayé de lui en parler ?",
           correct: true,
-        },
-        {
-          text: "Article 222-22.",
-          correct: false,
         },
       ],
     },
     {
-      speaker: "Emma",
-      message: " Merci beaucoup pour ton aide !",
+      speaker: "Zoé",
+      message: "Non jamais.",
+      options: [
+        {
+          text: "Parle lui et dit lui que tu n’es pas intéressé et que le post-it t’a mit mal à l’aise. S’il insiste et continue à laisser des post-it sur ton bureau, préviens la police ou la gendarmerie.",
+          correct: false,
+        },
+        {
+          text: "Laisse tomber, ne fais rien il arrêtera sûrement.",
+          correct: false,
+        },
+        {
+          text: "Parle lui, dis lui que tu n’es pas intéressé et que le post-it t’as mis mal à l’aise. S’il insiste et continue à laisser des post-it sur ton bureau, préviens ton supérieur hiérarchique.",
+          correct: true,
+        },
+      ],
+    },
+    {
+      speaker: "Zoé",
+      message:
+        "Oui c’est vrai, tu as surement raison, je vais aller lui parler. Merci pour ton aide !",
     },
   ];
 
@@ -67,8 +71,8 @@ export default function ConversationEmma2() {
   };
 
   const getImage = (speaker) => {
-    if (speaker === "Emma") {
-      return "emma.png";
+    if (speaker === "Zoé") {
+      return "zoe.png";
     } else {
       return "moi.png";
     }
@@ -88,17 +92,17 @@ export default function ConversationEmma2() {
   };
 
   const closeConversation = () => {
-    store.setState({ currentQuest: "Parler à Laura" });
-    store.setState({ personHelped: 1 });
-    store.setState({ emmaText2Showing: false });
-    store.setState({ emmaQuest2Active: false });
-    store.setState({ emmaQuest2Done: true });
-    store.setState({ lauraQuestActive: true });
+    store.setState({ currentQuest: "A suivre" });
+    store.setState({ personHelped: 3 });
+    store.setState({ zoeQuest2Active: false });
+    store.setState({ zoeQuest2Done: true });
+    store.setState({ zoeText2Showing: false });
+    store.setState({ kevinQuestActive: true });
   };
 
   return (
     <>
-      {emmaText2Showing && (
+      {zoeText2Showing && (
         <div className="conversation">
           <img
             src={getImage(steps[step].speaker)}

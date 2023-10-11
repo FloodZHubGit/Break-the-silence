@@ -2,63 +2,68 @@ import { useState } from "react";
 import "../../index.css";
 import store from "../../stores/store";
 
-export default function ConversationEmma2() {
-  const emmaText2Showing = store((state) => state.emmaText2Showing);
-  const emmaQuest2Active = store((state) => state.emmaQuest2Active);
-  const emmaQuest2Done = store((state) => state.emmaQuest2Done);
-
+export default function ConversationKevin() {
+  const kevinTextShowing = store((state) => state.kevinTextShowing);
   const [step, setStep] = useState(0);
 
   const steps = [
     {
+      speaker: "Kévin",
+      message: "Salut, j’ai des questions à te poser.",
+      options: [
+        {
+          text: "Désolé j’ai pas le temps.",
+          correct: false,
+        },
+        {
+          text: "Je t'écoute.",
+          correct: true,
+        },
+      ],
+    },
+    {
+      speaker: "Kévin",
+      message:
+        "Avec Sarah, je ne comprends pas, j’essaye d'être tactile avec elle, mais elle n'est pas réceptive, je l’ai invité à boire un verre, mais elle a refusé. Je ne sais plus quoi faire pour la draguer.",
+      options: [
+        {
+          text: "Elle est peut-être juste trop timide.",
+          correct: false,
+        },
+        {
+          text: "Fais attention à tes actes quand tu dis que tu a essayer d’étre tactile avec elle, car il n'est pas nécessaire qu'il y ait des actes de violence pour qualifier un acte d'agression sexuelle.",
+          correct: true,
+        },
+      ],
+    },
+    {
+      speaker: "Kévin",
+      message:
+        "Mince je ne m'imaginais pas être auteur d’agressions sexuelles.",
+      options: [
+        {
+          text: "Tu devrais arrêter immédiatement et t’excuser auprès de Sarah, elle avait peut-être peur des représailles c’est pour ça qu’elle ne t’a pas dit d'arrêter.",
+          correct: true,
+        },
+        {
+          text: "Tant qu'elle ne dit pas d'arrêter essaye de continuer.",
+          correct: false,
+        },
+        {
+          text: "Dans le fond tu n'as rien fait de mal.",
+          correct: false,
+        },
+      ],
+    },
+    {
+      speaker: "Kévin",
+      message:
+        "Oui je vais m’excuser de suite, je n'avais vraiment pas de mauvaises intentions.",
+    },
+    {
       speaker: "Moi",
-      message: "Voici ton téléphone Emma. Je l'ai trouvé à l'accueil.",
-    },
-    {
-      speaker: "Emma",
       message:
-        "Super tu as retrouvé mon téléphone merci beaucoup. Mais je ne sais pas à qui parler de ces messages.",
-      options: [
-        {
-          text: "Tu devrais en parler à la police ou la gendarmerie.",
-          correct: false,
-        },
-        {
-          text: "Tu devrais les signaler à un supérieur hiérarchique ou à ton employeur.",
-          correct: true,
-        },
-        {
-          text: "Tu devrais en parler à Sylvie, ta copine de bureau.",
-          correct: false,
-        },
-      ],
-    },
-    {
-      speaker: "Emma",
-      message:
-        "Tu as raison, je vais en parler à mon supérieur hiérarchique. Mais à quelle loi du code pénal je dois me référer si je veux lui en parler ?",
-      options: [
-        {
-          text: "Article 222-23.",
-          correct: false,
-        },
-        {
-          text: "Article 222-32.",
-          correct: false,
-        },
-        {
-          text: "Article 222-33.",
-          correct: true,
-        },
-        {
-          text: "Article 222-22.",
-          correct: false,
-        },
-      ],
-    },
-    {
-      speaker: "Emma",
-      message: " Merci beaucoup pour ton aide !",
+        "Vas-y, elle sera sûrement soulagée de savoir que tu n'avais pas de mauvaises intentions. Mais fais attention à tes actes, car il n'est pas nécessaire qu'il y ait des actes de violence pour qualifier un acte d'agression sexuelle.",
     },
   ];
 
@@ -67,8 +72,8 @@ export default function ConversationEmma2() {
   };
 
   const getImage = (speaker) => {
-    if (speaker === "Emma") {
-      return "emma.png";
+    if (speaker === "Kévin") {
+      return "kevin.png";
     } else {
       return "moi.png";
     }
@@ -88,17 +93,16 @@ export default function ConversationEmma2() {
   };
 
   const closeConversation = () => {
-    store.setState({ currentQuest: "Parler à Laura" });
-    store.setState({ personHelped: 1 });
-    store.setState({ emmaText2Showing: false });
-    store.setState({ emmaQuest2Active: false });
-    store.setState({ emmaQuest2Done: true });
-    store.setState({ lauraQuestActive: true });
+    store.setState({ currentQuest: "Derniere quête..." });
+    store.setState({ personHelped: 4 });
+    store.setState({ kevinTextShowing: false });
+    store.setState({ kevinQuestActive: false });
+    store.setState({ kevinQuestDone: true });
   };
 
   return (
     <>
-      {emmaText2Showing && (
+      {kevinTextShowing && (
         <div className="conversation">
           <img
             src={getImage(steps[step].speaker)}

@@ -24,6 +24,26 @@ export default create(
       emmaQuest2Active: false,
       emmaText2Showing: false,
       emmaQuest2Done: false,
+
+      lauraQuestActive: false,
+      lauraTextShowing: false,
+      lauraQuestDone: false,
+
+      zoeQuestActive: false,
+      zoeTextShowing: false,
+      zoetQuestDone: false,
+
+      postItQuestActive: false,
+      postItMenuShowing: false,
+      postItQuestDone: false,
+
+      zoeQuest2Active: false,
+      zoeText2Showing: false,
+      zoeQuest2Done: false,
+
+      kevinQuestActive: false,
+      kevinTextShowing: false,
+      kevinQuestDone: false,
     };
   })
 );

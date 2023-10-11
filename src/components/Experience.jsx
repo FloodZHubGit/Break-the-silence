@@ -6,6 +6,11 @@ import Emma from "./emma/Emma";
 import "../index.css";
 import { useRef } from "react";
 import Phone from "./phone/Phone";
+import Laura from "./laura/Laura";
+import Zoe from "./Zoe/Zoe";
+import PostIt from "./postit/PostIt";
+import { StickyNotes } from "./models/Sticky_notes";
+import Kevin from "./kevin/Kevin";
 
 export const Experience = () => {
   const office = useRef();
@@ -21,6 +26,10 @@ export const Experience = () => {
       <John />
       <Emma />
       <Phone />
+      <Laura />
+      <Zoe />
+      <PostIt />
+      <Kevin />
       <Html
         transform
         wrapperClass="htmlScreen"
