@@ -9,7 +9,7 @@ export default function ConversationEmma() {
   const steps = [
     {
       speaker: "Moi",
-      message: "Salut Emma, comment ça se passe ton travail ?",
+      message: "Salut Emma, comment se passe ton travail ?",
     },
     {
       speaker: "Emma",

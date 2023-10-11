@@ -20,15 +20,15 @@ export default function ConversationEmma2() {
         "Super tu as retrouvé mon téléphone merci beaucoup. Mais je ne sais pas à qui parler de ces messages.",
       options: [
         {
-          text: "Tu devrais en parler à Sylvie, ton amie de bureau.",
+          text: "Tu devrais en parler à la police ou la gendarmerie.",
           correct: false,
         },
         {
-          text: "Tu devrais les signaler au service des ressources humaines ou à un supérieur hiérarchique.",
+          text: "Tu devrais les signaler à un supérieur hiérarchique ou à ton employeur.",
           correct: true,
         },
         {
-          text: "Tu devrais en parler à Gérard Depardieu, un grand défenseur des droits des femmes.",
+          text: "Tu devrais en parler à Sylvie, ta copine de bureau.",
           correct: false,
         },
       ],
@@ -36,7 +36,29 @@ export default function ConversationEmma2() {
     {
       speaker: "Emma",
       message:
-        "Tu as raison, je vais en parler à mon supérieur hiérarchique, merci pour ton aide",
+        "Tu as raison, je vais en parler à mon supérieur hiérarchique. Mais à quelle loi du code pénal je dois me référer si je veux lui en parler ?",
+      options: [
+        {
+          text: "Article 222-23.",
+          correct: false,
+        },
+        {
+          text: "Article 222-32.",
+          correct: false,
+        },
+        {
+          text: "Article 222-33.",
+          correct: true,
+        },
+        {
+          text: "Article 222-22.",
+          correct: false,
+        },
+      ],
+    },
+    {
+      speaker: "Emma",
+      message: " Merci beaucoup pour ton aide !",
     },
   ];
 
