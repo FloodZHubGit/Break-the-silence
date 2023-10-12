@@ -93,11 +93,12 @@ export default function ConversationKevin() {
   };
 
   const closeConversation = () => {
-    store.setState({ currentQuest: "Derniere quête..." });
+    store.setState({ currentQuest: "Parler à Marine" });
     store.setState({ personHelped: 4 });
     store.setState({ kevinTextShowing: false });
     store.setState({ kevinQuestActive: false });
     store.setState({ kevinQuestDone: true });
+    store.setState({ marineQuestActive: true });
   };
 
   return (

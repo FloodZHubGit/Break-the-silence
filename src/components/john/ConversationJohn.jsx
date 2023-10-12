@@ -30,8 +30,8 @@ export default function ConversationJohn() {
             {accepted ? (
               <>
                 <p>
-                  Merci d'avoir accepté de nous aider dans la lutte contre le
-                  harcèlement sexuel !
+                  Reviens me voir quand tu auras fait le tour de tous les
+                  employés.
                 </p>
 
                 <div className="boutons">
@@ -40,13 +40,12 @@ export default function ConversationJohn() {
               </>
             ) : (
               <p>
-                Salut, je suis John, le boss de cette boîte. Je suis contre le
-                harcèlement sexuel, et je voudrais que tu m'aides à le
-                combattre. Avec l'aide de ton équipier, tu vas devoir aider les
-                employés de la boîte qui font face à des situations de
-                harcèlement sexuel. Tu vas devoir les aider à trouver les
-                solutions les plus adaptées à leur situation. Si tu as faux, tu
-                devras recommencer. Tu es prêt ?
+                Salut, je suis John, le supérieur de cet étage. Le patron de la
+                boîte m’a demandé de t’accueillir pour que tu règles les
+                problèmes d’harcèlement sexuel et d’agression sexuelle. Même si
+                je ne vois pas vraiment l’utilité car il n’y a aucun problème
+                dans cet étage de la boîte. Je te laisse aller voir tous les
+                employés.
               </p>
             )}
           </div>

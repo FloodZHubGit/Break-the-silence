@@ -11,6 +11,7 @@ import Zoe from "./Zoe/Zoe";
 import PostIt from "./postit/PostIt";
 import { StickyNotes } from "./models/Sticky_notes";
 import Kevin from "./kevin/Kevin";
+import Marine from "./marine/Marine";
 
 export const Experience = () => {
   const office = useRef();
@@ -30,6 +31,7 @@ export const Experience = () => {
       <Zoe />
       <PostIt />
       <Kevin />
+      <Marine />
       <Html
         transform
         wrapperClass="htmlScreen"

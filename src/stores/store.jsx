@@ -44,6 +44,10 @@ export default create(
       kevinQuestActive: false,
       kevinTextShowing: false,
       kevinQuestDone: false,
+
+      marineQuestActive: false,
+      marineTextShowing: false,
+      marineQuestDone: false,
     };
   })
 );
