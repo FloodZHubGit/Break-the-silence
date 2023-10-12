@@ -48,6 +48,12 @@ export default create(
       marineQuestActive: false,
       marineTextShowing: false,
       marineQuestDone: false,
+
+      johnQuest2Active: false,
+      johnText2Showing: false,
+      johnQuest2Done: false,
+
+      animationFinale: false,
     };
   })
 );

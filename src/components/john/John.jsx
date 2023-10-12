@@ -7,11 +7,14 @@ const John = () => {
   const john = useRef();
   const johnTextShowing = store((state) => state.johnTextShowing);
   const johnQuestActive = store((state) => state.johnQuestActive);
+  const johnText2Showing = store((state) => state.johnText2Showing);
+  const johnQuest2Active = store((state) => state.johnQuest2Active);
 
   const handleClickJohn = () => {
-    if (johnTextShowing) return;
-    if (!johnQuestActive) return;
-    store.setState({ johnTextShowing: true });
+    if (!johnTextShowing && johnQuestActive)
+      store.setState({ johnTextShowing: true });
+    if (!johnText2Showing && johnQuest2Active)
+      store.setState({ johnText2Showing: true });
   };
 
   return (
@@ -21,7 +24,10 @@ const John = () => {
       rotation={[0, Math.PI, 0]}
       onClick={handleClickJohn}
       onPointerOver={() => {
-        if (!johnTextShowing && johnQuestActive)
+        if (
+          (!johnTextShowing && johnQuestActive) ||
+          (!johnText2Showing && johnQuest2Active)
+        )
           document.body.style.cursor = "pointer";
       }}
       onPointerOut={() => {

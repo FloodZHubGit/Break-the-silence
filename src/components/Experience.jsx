@@ -9,12 +9,20 @@ import Phone from "./phone/Phone";
 import Laura from "./laura/Laura";
 import Zoe from "./Zoe/Zoe";
 import PostIt from "./postit/PostIt";
-import { StickyNotes } from "./models/Sticky_notes";
 import Kevin from "./kevin/Kevin";
 import Marine from "./marine/Marine";
+import { PoliceCar } from "./models/PoliceCar";
+import store from "../stores/store";
+import { useFrame } from "@react-three/fiber";
 
 export const Experience = () => {
   const office = useRef();
+  const policeCar = useRef();
+  const animationFinale = store((state) => state.animationFinale);
+
+  useFrame(() => {
+    if (animationFinale) policeCar.current.position.x += 0.05;
+  });
 
   return (
     <>
@@ -24,7 +32,7 @@ export const Experience = () => {
           <Office />
         </group>
       </Stage>
-      <John />
+      {!animationFinale && <John />}
       <Emma />
       <Phone />
       <Laura />
@@ -32,6 +40,15 @@ export const Experience = () => {
       <PostIt />
       <Kevin />
       <Marine />
+      {animationFinale && (
+        <group
+          position={[1.5, -1.2, 7]}
+          rotation={[0, Math.PI / 2, 0]}
+          ref={policeCar}
+        >
+          <PoliceCar />
+        </group>
+      )}
       <Html
         transform
         wrapperClass="htmlScreen"

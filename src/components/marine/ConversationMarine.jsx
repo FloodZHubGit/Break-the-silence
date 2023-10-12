@@ -124,6 +124,7 @@ export default function ConversationMarine() {
     store.setState({ marineTextShowing: false });
     store.setState({ marineQuestActive: false });
     store.setState({ marineQuestDone: true });
+    store.setState({ johnQuest2Active: true });
   };
 
   return (

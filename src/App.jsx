@@ -12,6 +12,7 @@ import PostItInterface from "./components/postit/PostItInterface";
 import ConversationZoe2 from "./components/Zoe/ConversationZoe2";
 import ConversationKevin from "./components/kevin/ConversationKevin";
 import ConversationMarine from "./components/marine/ConversationMarine";
+import ConversationJohn2 from "./components/john/ConversationJohn2";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
       <ConversationZoe2 />
       <ConversationKevin />
       <ConversationMarine />
+      <ConversationJohn2 />
     </>
   );
 }
