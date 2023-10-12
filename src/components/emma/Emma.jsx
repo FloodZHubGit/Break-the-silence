@@ -36,11 +36,6 @@ const Emma = () => {
       }}
     >
       <AnimatedWoman scale={0.75} />
-      {!emmaTextShowing && emmaQuestActive && (
-        <Html wrapperClass="bulle" center position={[0, 2, 0]} occlude>
-          Emma veut vous parler
-        </Html>
-      )}
     </group>
   );
 };

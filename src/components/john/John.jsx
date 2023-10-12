@@ -35,11 +35,6 @@ const John = () => {
       }}
     >
       <BusinessMan scale={0.75} />
-      {!johnTextShowing && johnQuestActive && (
-        <Html wrapperClass="bulle" center position={[0, 2, 0]} occlude>
-          John veut vous parler
-        </Html>
-      )}
     </group>
   );
 };

@@ -32,11 +32,6 @@ const Kevin = () => {
       }}
     >
       <BeachCharacter scale={0.75} />
-      {!kevinTextShowing && kevinQuestActive && (
-        <Html wrapperClass="bulle" center position={[0, 2, 0]} occlude>
-          Kevin veut vous parler
-        </Html>
-      )}
     </group>
   );
 };

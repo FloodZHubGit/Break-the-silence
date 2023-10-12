@@ -32,11 +32,6 @@ const Marine = () => {
       }}
     >
       <AnimatedWoman2 scale={0.75} />
-      {!marineTextShowing && marineQuestActive && (
-        <Html wrapperClass="bulle" center position={[0, 2, 0]} occlude>
-          Marine veut vous parler
-        </Html>
-      )}
     </group>
   );
 };

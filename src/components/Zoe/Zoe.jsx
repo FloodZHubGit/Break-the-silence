@@ -40,11 +40,6 @@ const Zoe = () => {
       }}
     >
       <PunkGirl scale={0.75} />
-      {!zoeTextShowing && zoeQuestActive && (
-        <Html wrapperClass="bulle" center position={[0, 2, 0]} occlude>
-          Zoe veut vous parler
-        </Html>
-      )}
     </group>
   );
 };

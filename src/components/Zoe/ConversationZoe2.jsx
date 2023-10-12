@@ -92,7 +92,7 @@ export default function ConversationZoe2() {
   };
 
   const closeConversation = () => {
-    store.setState({ currentQuest: "A suivre" });
+    store.setState({ currentQuest: "Parler à Kévin" });
     store.setState({ personHelped: 3 });
     store.setState({ zoeQuest2Active: false });
     store.setState({ zoeQuest2Done: true });

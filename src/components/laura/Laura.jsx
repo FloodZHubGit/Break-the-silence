@@ -31,11 +31,6 @@ const Laura = () => {
       }}
     >
       <SuitGirl scale={0.75} />
-      {!lauraTextShowing && lauraQuestActive && (
-        <Html wrapperClass="bulle" center position={[0, 2, 0]} occlude>
-          Laura veut vous parler
-        </Html>
-      )}
     </group>
   );
 };
