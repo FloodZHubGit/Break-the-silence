@@ -123,6 +123,17 @@ export const Experience = () => {
       <PostIt />
       <Kevin />
       <Marine />
+      <Html
+        transform
+        wrapperClass="htmlScreen"
+        distanceFactor={1.17}
+        position={[-4.9, 0.3, 3.45]}
+        scale={0.4}
+        rotation={[0, Math.PI / 2, 0]}
+        occlude
+      >
+        <video src="Presentation.mp4" autoPlay muted loop />
+      </Html>
     </>
   );
 };
