@@ -10,7 +10,7 @@ export default create(
       personHelped: 0,
       totalPersonToHelp: 5,
 
-      johnQuestActive: false,
+      johnQuestActive: true,
       johnQuestDone: false,
       johnTextShowing: false,
 
@@ -50,7 +50,7 @@ export default create(
       marineTextShowing: false,
       marineQuestDone: false,
 
-      johnQuest2Active: true,
+      johnQuest2Active: false,
       johnText2Showing: false,
       johnQuest2Done: false,
 
